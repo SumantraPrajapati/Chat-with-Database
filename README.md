@@ -341,6 +341,14 @@ pip install -r requirements.txt
 
 ---
 
+## 4. Place your own Database file(.db)
+Place your .db file inside "Database File" folder 
+also add path of the .db file in database.py file in the 
+
+```bash
+conn = sqlite3.connect("<Your_database_file_full_path>")
+```
+
 #  Environment Variables
 
 Create a `.env` file inside the agent directory:
