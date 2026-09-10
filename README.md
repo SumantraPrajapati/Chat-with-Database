@@ -92,7 +92,9 @@ The AI agent understands the question, generates an appropriate **read-only SQL 
 ```text
 Chat-with-Database/
 │
-├── your_database_file.db
+├── Database File
+|     |
+|     ├── your_database_file.db 
 │
 ├── database_assistant/
      │
