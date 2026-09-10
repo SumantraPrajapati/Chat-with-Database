@@ -90,19 +90,18 @@ The AI agent understands the question, generates an appropriate **read-only SQL 
 ##  Project Structure
 
 ```text
-talk with database/
+Chat-with-Database/
 │
-├── chinook.db
+├── your_database_file.db
 │
 ├── database_assistant/
-│   │
-│   ├── __init__.py
-│   ├── agent.py
-│   ├── database.py
-│   ├── tools.py
-│   └── .env
-│
-└── a.pdf
+     │
+     ├── __init__.py
+     ├── agent.py
+     ├── database.py
+     ├── tools.py
+     └── .env
+
 ```
 
 ### `agent.py`
