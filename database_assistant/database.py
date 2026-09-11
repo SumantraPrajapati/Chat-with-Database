@@ -1,8 +1,12 @@
 import sqlite3
-
+import os 
 def func():
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-    conn = sqlite3.connect("your_database_file_full_path")
+    DB_PATH = os.path.join(BASE_DIR, "database", "chinook.db")
+
+    conn = sqlite3.connect(DB_PATH)
+    print(DB_PATH)
     cursor = conn.cursor()
 
     cursor.execute("""
