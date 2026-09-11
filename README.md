@@ -30,6 +30,14 @@ The AI agent understands the question, generates an appropriate **read-only SQL 
 
 ---
 
+## Preview
+
+
+
+https://github.com/user-attachments/assets/ed09bc6d-aeb7-4633-925c-3035ff244448
+
+
+
 ##  Architecture
 
 ```text
