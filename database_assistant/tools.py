@@ -1,23 +1,32 @@
 import sqlite3
-from google.adk.tools import FunctionTool
 import os
+from google.adk.tools import FunctionTool
 
-target_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Database File")
+# database_assistant/
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# talk with database/
+PROJECT_DIR = os.path.dirname(BASE_DIR)
+
+# talk with database/database/
+DATABASE_DIR = os.path.join(PROJECT_DIR, "database")
+
 
 db_file_name = None
-for entry in os.listdir("Database File"):
-    if entry.endswith(".db"):
-        db_file_name = entry
-        break  
 
-DB_NAME = db_file_name
+for file in os.listdir(DATABASE_DIR):
+    if file.lower().endswith(".db"):
+        db_file_name = file
+        break
+
+
+if db_file_name:
+    DB_NAME = os.path.join(DATABASE_DIR, db_file_name)
+else:
+    DB_NAME = None
 
 def query_database(sql: str) -> dict:
-    """
-    Execute a READ-ONLY SQL query against the company database.
-    Only SELECT statements are allowed.
-    
-    """
+
     sql_clean = sql.strip().lower()
     
     if not sql_clean.startswith("select"):
@@ -59,7 +68,7 @@ def query_database(sql: str) -> dict:
         conn.close()
         
         result = [
-            dict(zip(columns , rows))
+            dict(zip(columns , row))
             for row in rows
         ]
         
